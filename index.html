@@ -1,357 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — Prompt</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --afterglow: #E8894A;
-      --bg: #0a0a0a;
-      --surface: #141414;
-      --border: #222;
-      --text: #f0f0f0;
-      --muted: #888;
-      --accent: var(--afterglow);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Prompt</title>
+<meta name="description" content="How Spencer Street Limited collects, uses, and shares information when you use Prompt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Brand palette — pulled directly from the Prompt brand identity */
+    --first-light: #EAF3B0;
+    --midnight: #12167A;
+    --firelight: #F77228;
+    --cloud-cover: #D3D3D8;
+    --skywash: #B5C9D5;
+    --golden-hour: #FFC05A;
+    --afterglow: #F56414;
+    --after-hours: #1D0A1D;
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* Functional tokens */
+    --bg: #000000;
+    --surface: #0E0E0F;
+    --surface-2: #161618;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+    --text: #FFFFFF;
+    --text-secondary: #9A9AA0;
+    --text-tertiary: #6B6B72;
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      line-height: 1.8;
-      font-size: 16px;
-    }
+    --radius-card: 24px;
+    --radius-pill: 999px;
+    --radius-md: 16px;
 
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 32px 0;
-      text-align: center;
-    }
+    --max-w: 720px;
+  }
 
-    .logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 28px;
-      color: var(--afterglow);
-      letter-spacing: -0.5px;
-    }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
-    .logo-sub {
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
 
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 64px 24px 120px;
-    }
+  /* Subtle ambient glow that mirrors the "Plan" button glow in the app */
+  body::before {
+    content: '';
+    position: fixed;
+    bottom: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(247, 114, 40, 0.12) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
 
-    .meta {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 48px;
-      padding-bottom: 48px;
-      border-bottom: 1px solid var(--border);
-    }
+  a {
+    color: var(--firelight);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  a:hover { opacity: 0.75; }
 
-    .badge {
-      background: var(--afterglow);
-      color: white;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 100px;
-    }
+  /* ─────────────────  HEADER  ───────────────── */
+  .top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+  }
 
-    .date {
-      color: var(--muted);
-      font-size: 14px;
-    }
+  .top-bar-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-    .intro {
-      font-size: 18px;
-      color: #ccc;
-      line-height: 1.7;
-      margin-bottom: 64px;
-      padding: 32px;
-      background: var(--surface);
-      border-radius: 16px;
-      border: 1px solid var(--border);
-    }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
 
-    h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 48px;
-      font-weight: 400;
-      line-height: 1.1;
-      margin-bottom: 16px;
-      letter-spacing: -1px;
-    }
+  .pill-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-strong);
+    font-size: 13px;
+    color: var(--text-secondary);
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .pill-link:hover {
+    border-color: var(--firelight);
+    color: var(--firelight);
+    opacity: 1;
+  }
 
-    h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 28px;
-      font-weight: 400;
-      color: var(--text);
-      margin: 56px 0 20px;
-      padding-top: 56px;
-      border-top: 1px solid var(--border);
-      letter-spacing: -0.3px;
-    }
+  /* ─────────────────  HERO  ───────────────── */
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 56px 24px 40px;
+  }
 
-    h2:first-of-type {
-      margin-top: 0;
-      padding-top: 0;
-      border-top: none;
-    }
+  .hero {
+    margin-bottom: 64px;
+  }
 
-    h3 {
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--afterglow);
-      margin: 32px 0 12px;
-    }
+  .happening-now {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--firelight);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    margin-bottom: 16px;
+  }
 
-    p {
-      color: #bbb;
-      margin-bottom: 16px;
-    }
+  .happening-now::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--firelight);
+    box-shadow: 0 0 10px var(--firelight);
+  }
 
-    ul {
-      list-style: none;
-      margin: 16px 0 24px;
-      padding: 0;
-    }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 9vw, 80px);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin-bottom: 28px;
+  }
 
-    ul li {
-      color: #bbb;
-      padding: 8px 0 8px 24px;
-      position: relative;
-      border-bottom: 1px solid var(--border);
-    }
+  .meta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    flex-wrap: wrap;
+  }
 
-    ul li:last-child { border-bottom: none; }
+  .meta-row .today {
+    color: var(--firelight);
+    font-weight: 500;
+  }
 
-    ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 18px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--afterglow);
-    }
+  .meta-row .dot {
+    color: var(--text-tertiary);
+  }
 
-    ul li strong {
-      color: var(--text);
-      font-weight: 500;
-    }
+  .intro-card {
+    margin-top: 40px;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--cloud-cover);
+  }
 
-    a {
-      color: var(--afterglow);
-      text-decoration: none;
-    }
+  .intro-card strong {
+    color: var(--text);
+    font-weight: 500;
+  }
 
-    a:hover { text-decoration: underline; }
+  /* ─────────────────  STATS BAR  ───────────────── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 48px 0 64px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
 
-    .section-number {
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      display: block;
-    }
+  .stat {
+    text-align: center;
+    padding: 4px 8px;
+    position: relative;
+  }
+  .stat + .stat::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 36px;
+    background: var(--border);
+  }
 
-    .contact-card {
-      margin-top: 64px;
-      padding: 40px;
-      background: var(--surface);
-      border-radius: 20px;
-      border: 1px solid var(--border);
-    }
+  .stat-value {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+  }
 
-    .contact-card h2 {
-      border-top: none;
-      padding-top: 0;
-      margin-top: 0;
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+  }
 
-    .contact-card p { margin-bottom: 8px; }
+  /* ─────────────────  CATEGORY PILLS / TOC  ───────────────── */
+  .toc-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 16px;
+  }
 
-    .email-link {
-      display: inline-block;
-      margin-top: 16px;
-      background: var(--afterglow);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 100px;
-      font-size: 14px;
-      font-weight: 500;
-      text-decoration: none;
-    }
+  .toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 80px;
+  }
 
-    .email-link:hover {
-      opacity: 0.9;
-      text-decoration: none;
-    }
+  .toc a {
+    padding: 10px 16px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-strong);
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+    background: transparent;
+  }
+  .toc a:hover {
+    border-color: var(--firelight);
+    color: var(--firelight);
+    opacity: 1;
+  }
 
-    footer {
-      text-align: center;
-      padding: 48px 24px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 13px;
-    }
+  /* ─────────────────  SECTIONS  ───────────────── */
+  section {
+    margin-bottom: 64px;
+    scroll-margin-top: 96px;
+  }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 36px; }
-      h2 { font-size: 24px; }
-      main { padding: 48px 20px 80px; }
-      .intro { padding: 24px; font-size: 16px; }
-    }
-  </style>
+  .section-num {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--firelight);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(30px, 4.5vw, 40px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--first-light);
+    margin: 32px 0 14px;
+  }
+
+  p {
+    color: var(--cloud-cover);
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+
+  /* List = "card list" pattern, like the events list in the app */
+  ul.card-list {
+    list-style: none;
+    margin: 16px 0 24px;
+    padding: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  ul.card-list li {
+    padding: 16px 20px 16px 44px;
+    color: var(--cloud-cover);
+    position: relative;
+    font-size: 15.5px;
+    line-height: 1.55;
+    border-bottom: 1px solid var(--border);
+  }
+  ul.card-list li:last-child { border-bottom: none; }
+
+  ul.card-list li::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 24px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--firelight);
+  }
+
+  ul.card-list li strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* "Going" pill — used to flag the affirmative no-sell statement */
+  .going-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    background: var(--first-light);
+    color: #1A1F0A;
+    border-radius: var(--radius-pill);
+    font-weight: 500;
+    font-size: 15px;
+    margin: 8px 0 12px;
+  }
+  .going-pill svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Going-pill annotation */
+  .going-note {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  /* ─────────────────  PROVIDER GRID  ───────────────── */
+  .provider-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 20px 0 16px;
+  }
+
+  .provider {
+    padding: 18px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    transition: border-color 0.2s ease;
+  }
+  .provider:hover { border-color: var(--border-strong); }
+
+  .provider-name {
+    color: var(--text);
+    font-weight: 500;
+    font-size: 14.5px;
+    margin-bottom: 4px;
+  }
+
+  .provider-desc {
+    color: var(--text-secondary);
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  /* ─────────────────  CONTACT CARD  ───────────────── */
+  .contact-card {
+    margin-top: 96px;
+    padding: 40px 32px;
+    background: linear-gradient(180deg, var(--surface) 0%, rgba(247, 114, 40, 0.04) 100%);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-card);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(234, 243, 176, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .contact-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--firelight);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .contact-card h2 {
+    margin-bottom: 16px;
+    font-size: 36px;
+  }
+
+  .contact-card p {
+    color: var(--cloud-cover);
+    font-size: 15.5px;
+    margin-bottom: 8px;
+  }
+
+  .contact-card .org {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  /* CTA modeled on the app's Going / Invite buttons */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 26px;
+    background: var(--firelight);
+    color: var(--bg);
+    border-radius: var(--radius-pill);
+    font-weight: 500;
+    font-size: 15px;
+    transition: transform 0.15s ease, opacity 0.2s ease;
+  }
+  .cta:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+  .cta svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ─────────────────  FOOTER  ───────────────── */
+  footer {
+    text-align: center;
+    padding: 48px 24px 64px;
+    color: var(--text-tertiary);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+    margin-top: 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  footer .brand-mark {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+
+  /* ─────────────────  RESPONSIVE  ───────────────── */
+  @media (max-width: 600px) {
+    main { padding: 40px 20px 24px; }
+    .hero { margin-bottom: 48px; }
+    h1 { font-size: 52px; }
+    h2 { font-size: 30px; }
+    .intro-card { padding: 22px; font-size: 15.5px; }
+    .contact-card { padding: 32px 24px; }
+    .contact-card h2 { font-size: 30px; }
+    .stat-value { font-size: 22px; }
+    .toc { margin-bottom: 56px; }
+    section { margin-bottom: 56px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
 </head>
 <body>
 
-<header>
-  <div class="logo">Prompt</div>
-  <div class="logo-sub">Privacy Policy</div>
+<header class="top-bar">
+  <div class="top-bar-inner">
+    <span class="brand">Prompt</span>
+    <a href="#contact" class="pill-link">
+      <span>Contact</span>
+    </a>
+  </div>
 </header>
 
 <main>
 
-  <div class="meta">
-    <span class="badge">Legal</span>
-    <span class="date">Last updated: 6 May 2026</span>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="happening-now">Legal · Privacy</div>
+    <h1>Privacy<br>Policy</h1>
+    <div class="meta-row">
+      <span class="today">Last updated</span>
+      <span>•</span>
+      <span>6 May 2026</span>
+      <span class="dot">•</span>
+      <span>Spencer Street Limited</span>
+    </div>
+
+    <div class="intro-card">
+      This Privacy Policy explains how <strong>Spencer Street Limited</strong> collects, uses, and shares information when you use Prompt. We've written it in plain English. If anything is unclear, contact us using the details at the end.
+    </div>
   </div>
 
-  <div class="intro">
-    This Privacy Policy explains how Spencer Street Limited collects, uses, and shares information when you use Prompt. We've written it in plain English. If anything is unclear, contact us using the details at the end.
+  <!-- STATS BAR (mirrors the profile screen: Created / Attended / Saved / Friends) -->
+  <div class="stats" aria-label="Privacy at a glance">
+    <div class="stat">
+      <div class="stat-value">0</div>
+      <div class="stat-label">Sold to advertisers</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">9</div>
+      <div class="stat-label">Sections</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">∞</div>
+      <div class="stat-label">Right to delete</div>
+    </div>
   </div>
 
-  <span class="section-number">Section 01</span>
-  <h2>Information We Collect</h2>
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc-label">Find a section</div>
+  <nav class="toc" aria-label="Table of contents">
+    <a href="#collect">What we collect</a>
+    <a href="#use">How we use it</a>
+    <a href="#share">How it's shared</a>
+    <a href="#notifications">Notifications</a>
+    <a href="#storage">Storage &amp; transfers</a>
+    <a href="#rights">Your rights</a>
+    <a href="#deletion">Account deletion</a>
+    <a href="#children">Children</a>
+    <a href="#changes">Changes</a>
+  </nav>
 
-  <h3>Account Information</h3>
-  <ul>
-    <li><strong>Name</strong> — used to identify you to friends.</li>
-    <li><strong>Email address</strong> — used to create and secure your account.</li>
-    <li><strong>Profile photo</strong> — optional; shown to your friends and on events you create or attend.</li>
-    <li><strong>Sign-in identifiers</strong> — if you sign in with Google or Apple, we receive a unique identifier and basic profile details from those providers.</li>
-  </ul>
+  <!-- ─────────────────  01  ───────────────── -->
+  <section id="collect">
+    <div class="section-num">Section 01</div>
+    <h2>Information we collect</h2>
 
-  <h3>Activity Within the App</h3>
-  <ul>
-    <li><strong>Events</strong> you create or attend, including titles, descriptions, dates, locations, and photos.</li>
-    <li><strong>RSVPs and invitations</strong> you send and receive.</li>
-    <li><strong>Friend connections</strong> — the list of people you're connected to.</li>
-    <li><strong>Messages and comments</strong> you send through chat and event comments.</li>
-    <li><strong>Notification preferences</strong> you set within the App.</li>
-  </ul>
+    <h3>Account Information</h3>
+    <ul class="card-list">
+      <li><strong>Name</strong> — used to identify you to friends.</li>
+      <li><strong>Email address</strong> — used to create and secure your account.</li>
+      <li><strong>Profile photo</strong> — optional; shown to your friends and on events you create or attend.</li>
+      <li><strong>Sign-in identifiers</strong> — if you sign in with Google or Apple, we receive a unique identifier and basic profile details from those providers.</li>
+    </ul>
 
-  <h3>Location Information</h3>
-  <p>With your permission, we collect your device's location to suggest events happening near you. You can grant or revoke this at any time in iOS Settings. If you don't share your location, you can still use Prompt — you just won't see location-based suggestions.</p>
+    <h3>Activity Within the App</h3>
+    <ul class="card-list">
+      <li><strong>Events</strong> you create or attend, including titles, descriptions, dates, locations, and photos.</li>
+      <li><strong>RSVPs and invitations</strong> you send and receive.</li>
+      <li><strong>Friend connections</strong> — the list of people you're connected to.</li>
+      <li><strong>Messages and comments</strong> you send through chat and event comments.</li>
+      <li><strong>Notification preferences</strong> you set within the App.</li>
+    </ul>
 
-  <h3>Technical Information</h3>
-  <p>We automatically receive some technical information when you use Prompt, including device type, operating system version, app version, crash logs, and basic usage diagnostics. We use this to keep the App running reliably.</p>
+    <h3>Location Information</h3>
+    <p>With your permission, we collect your device's location to suggest events happening near you. You can grant or revoke this at any time in iOS Settings. If you don't share your location, you can still use Prompt — you just won't see location-based suggestions.</p>
 
-  <span class="section-number">Section 02</span>
-  <h2>How We Use Your Information</h2>
-  <ul>
-    <li>Provide and operate the App — letting you create events, invite friends, RSVP, comment, and chat.</li>
-    <li>Show you what friends are doing and suggest relevant events nearby.</li>
-    <li>Send push notifications about invitations, RSVPs, messages, and event updates.</li>
-    <li>Authenticate you and keep your account secure.</li>
-    <li>Respond to your support requests.</li>
-    <li>Diagnose bugs, monitor performance, and improve the App.</li>
-    <li>Comply with legal obligations and enforce our terms.</li>
-  </ul>
-  <p>We do not sell your personal information, and we do not use your data for advertising.</p>
+    <h3>Technical Information</h3>
+    <p>We automatically receive some technical information when you use Prompt, including device type, operating system version, app version, crash logs, and basic usage diagnostics. We use this to keep the App running reliably.</p>
+  </section>
 
-  <span class="section-number">Section 03</span>
-  <h2>How Information Is Shared</h2>
+  <!-- ─────────────────  02  ───────────────── -->
+  <section id="use">
+    <div class="section-num">Section 02</div>
+    <h2>How we use your information</h2>
 
-  <h3>With Other Prompt Users</h3>
-  <p>Information you choose to share — such as events you create, RSVPs, comments, messages, and your profile — is visible to the people you share it with. Please be thoughtful about what you post.</p>
+    <ul class="card-list">
+      <li>Provide and operate the App — letting you create events, invite friends, RSVP, comment, and chat.</li>
+      <li>Show you what friends are doing and suggest relevant events nearby.</li>
+      <li>Send push notifications about invitations, RSVPs, messages, and event updates.</li>
+      <li>Authenticate you and keep your account secure.</li>
+      <li>Respond to your support requests.</li>
+      <li>Diagnose bugs, monitor performance, and improve the App.</li>
+      <li>Comply with legal obligations and enforce our terms.</li>
+    </ul>
 
-  <h3>With Service Providers</h3>
-  <ul>
-    <li><strong>Google Firebase</strong> — we use Firebase to store your account, events, messages, and photos, to authenticate sign-ins, and to send push notifications.</li>
-    <li><strong>Google Sign-In</strong> — if you sign in with Google, Google shares basic profile information with us.</li>
-    <li><strong>Sign in with Apple</strong> — if you sign in with Apple, Apple shares an identifier and, if you choose, your name and email.</li>
-    <li><strong>APNs and FCM</strong> — used to deliver push notifications to your device.</li>
-  </ul>
-  <p>Provider privacy policies: <a href="https://policies.google.com/privacy">Google / Firebase</a> · <a href="https://www.apple.com/legal/privacy/">Apple</a></p>
+    <div class="going-pill" aria-label="Confirmed commitment">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+      We don't sell your data, ever
+    </div>
+    <p class="going-note">No personal information is sold, and we don't use your data for advertising.</p>
+  </section>
 
-  <h3>For Legal Reasons</h3>
-  <p>We may disclose information if required by law or to protect the safety, rights, or property of our users or Spencer Street Limited.</p>
+  <!-- ─────────────────  03  ───────────────── -->
+  <section id="share">
+    <div class="section-num">Section 03</div>
+    <h2>How information is shared</h2>
 
-  <h3>In a Business Transfer</h3>
-  <p>If Spencer Street Limited is involved in a merger or acquisition, your information may be transferred. We'll notify you before it becomes subject to a different privacy policy.</p>
+    <h3>With Other Prompt Users</h3>
+    <p>Information you choose to share — such as events you create, RSVPs, comments, messages, and your profile — is visible to the people you share it with. Please be thoughtful about what you post.</p>
 
-  <span class="section-number">Section 04</span>
-  <h2>Push Notifications</h2>
-  <p>Prompt sends push notifications about invitations, RSVPs, comments, and messages — delivered through FCM and APNs. You can adjust preferences inside the App or turn them off in iOS Settings → Notifications → Prompt.</p>
+    <h3>With Service Providers</h3>
+    <div class="provider-grid">
+      <div class="provider">
+        <div class="provider-name">Google Firebase</div>
+        <div class="provider-desc">Stores your account, events, messages, and photos. Authenticates sign-ins and delivers push notifications.</div>
+      </div>
+      <div class="provider">
+        <div class="provider-name">Google Sign-In</div>
+        <div class="provider-desc">If you sign in with Google, basic profile information is shared with us.</div>
+      </div>
+      <div class="provider">
+        <div class="provider-name">Sign in with Apple</div>
+        <div class="provider-desc">Apple shares an identifier and, if you choose, your name and email.</div>
+      </div>
+      <div class="provider">
+        <div class="provider-name">APNs &amp; FCM</div>
+        <div class="provider-desc">Used to deliver push notifications to your device.</div>
+      </div>
+    </div>
+    <p>Provider privacy policies: <a href="https://policies.google.com/privacy">Google / Firebase</a> · <a href="https://www.apple.com/legal/privacy/">Apple</a></p>
 
-  <span class="section-number">Section 05</span>
-  <h2>Data Storage and International Transfers</h2>
-  <p>Spencer Street Limited is based in New Zealand. Your data is stored on Google Firebase servers, which may be located in the United States or other countries where Google operates. When we transfer personal data out of the UK or EEA, we rely on appropriate safeguards such as Standard Contractual Clauses.</p>
-  <p>We use industry-standard security measures including encryption in transit and at rest and restricted access controls.</p>
+    <h3>For Legal Reasons</h3>
+    <p>We may disclose information if required by law or to protect the safety, rights, or property of our users or Spencer Street Limited.</p>
 
-  <span class="section-number">Section 06</span>
-  <h2>Your Rights and Choices</h2>
-  <ul>
-    <li><strong>Access and update</strong> your profile and preferences directly in the App.</li>
-    <li><strong>Control</strong> your location, camera, photo, and notification permissions in iOS Settings.</li>
-    <li><strong>Delete your account</strong> at any time from within the App.</li>
-  </ul>
+    <h3>In a Business Transfer</h3>
+    <p>If Spencer Street Limited is involved in a merger or acquisition, your information may be transferred. We'll notify you before it becomes subject to a different privacy policy.</p>
+  </section>
 
-  <h3>UK and European Economic Area</h3>
-  <p>Under UK GDPR and EU GDPR, you have rights including access, rectification, erasure, restriction, portability, and the right to object. You may also lodge a complaint with the ICO (ico.org.uk) in the UK or your national supervisory authority in the EU.</p>
+  <!-- ─────────────────  04  ───────────────── -->
+  <section id="notifications">
+    <div class="section-num">Section 04</div>
+    <h2>Push notifications</h2>
+    <p>Prompt sends push notifications about invitations, RSVPs, comments, and messages — delivered through FCM and APNs. You can adjust preferences inside the App or turn them off in iOS Settings → Notifications → Prompt.</p>
+  </section>
 
-  <h3>New Zealand</h3>
-  <p>Under the Privacy Act 2020, you have the right to access and request correction of personal information we hold. You can complain to the Office of the Privacy Commissioner (privacy.org.nz).</p>
+  <!-- ─────────────────  05  ───────────────── -->
+  <section id="storage">
+    <div class="section-num">Section 05</div>
+    <h2>Data storage and international transfers</h2>
+    <p>Spencer Street Limited is based in New Zealand. Your data is stored on Google Firebase servers, which may be located in the United States or other countries where Google operates. When we transfer personal data out of the UK or EEA, we rely on appropriate safeguards such as Standard Contractual Clauses.</p>
+    <p>We use industry-standard security measures including encryption in transit and at rest and restricted access controls.</p>
+  </section>
 
-  <span class="section-number">Section 07</span>
-  <h2>Account Deletion</h2>
-  <p>You can delete your account at any time in Settings → Delete Account. Deleting your account permanently removes your profile, events, RSVPs, friend connections, messages, and photos from our active systems. Some information may remain in encrypted backups briefly before being overwritten. Messages you sent may remain visible in other users' chats.</p>
+  <!-- ─────────────────  06  ───────────────── -->
+  <section id="rights">
+    <div class="section-num">Section 06</div>
+    <h2>Your rights and choices</h2>
+    <ul class="card-list">
+      <li><strong>Access and update</strong> your profile and preferences directly in the App.</li>
+      <li><strong>Control</strong> your location, camera, photo, and notification permissions in iOS Settings.</li>
+      <li><strong>Delete your account</strong> at any time from within the App.</li>
+    </ul>
 
-  <span class="section-number">Section 08</span>
-  <h2>Children</h2>
-  <p>Prompt is not intended for children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we'll delete it.</p>
+    <h3>UK and European Economic Area</h3>
+    <p>Under UK GDPR and EU GDPR, you have rights including access, rectification, erasure, restriction, portability, and the right to object. You may also lodge a complaint with the ICO (<a href="https://ico.org.uk">ico.org.uk</a>) in the UK or your national supervisory authority in the EU.</p>
 
-  <span class="section-number">Section 09</span>
-  <h2>Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. If we make material changes, we'll notify you in the App or by email before the changes take effect.</p>
+    <h3>New Zealand</h3>
+    <p>Under the Privacy Act 2020, you have the right to access and request correction of personal information we hold. You can complain to the Office of the Privacy Commissioner (<a href="https://privacy.org.nz">privacy.org.nz</a>).</p>
+  </section>
 
-  <div class="contact-card">
-    <h2>Contact Us</h2>
+  <!-- ─────────────────  07  ───────────────── -->
+  <section id="deletion">
+    <div class="section-num">Section 07</div>
+    <h2>Account deletion</h2>
+    <p>You can delete your account at any time in <strong style="color: var(--text); font-weight: 500;">Settings → Delete Account</strong>. Deleting your account permanently removes your profile, events, RSVPs, friend connections, messages, and photos from our active systems. Some information may remain in encrypted backups briefly before being overwritten. Messages you sent may remain visible in other users' chats.</p>
+  </section>
+
+  <!-- ─────────────────  08  ───────────────── -->
+  <section id="children">
+    <div class="section-num">Section 08</div>
+    <h2>Children</h2>
+    <p>Prompt is not intended for children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we'll delete it.</p>
+  </section>
+
+  <!-- ─────────────────  09  ───────────────── -->
+  <section id="changes">
+    <div class="section-num">Section 09</div>
+    <h2>Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. If we make material changes, we'll notify you in the App or by email before the changes take effect.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="contact-card" id="contact">
+    <div class="contact-eyebrow">Get in touch</div>
+    <h2>Questions?<br>We'd love to hear.</h2>
     <p>If you have questions about this Privacy Policy or how we handle your information, please get in touch. We aim to respond within 30 days.</p>
-    <p><strong>Spencer Street Limited</strong> — registered in New Zealand</p>
-    <a href="mailto:hello@spencer-st.com" class="email-link">hello@spencer-st.com</a>
+    <div class="org">Spencer Street Limited — registered in New Zealand</div>
+    <a href="mailto:hello@spencer-st.com" class="cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+      hello@spencer-st.com
+    </a>
   </div>
 
 </main>
 
 <footer>
-  © 2026 Spencer Street Limited · Prompt
+  <div class="brand-mark">Prompt</div>
+  © 2026 Spencer Street Limited
 </footer>
 
 </body>
